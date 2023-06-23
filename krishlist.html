@@ -27,6 +27,20 @@
       width: 80%;
       margin: 10px auto;
     }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+    }
+
+    .centered-video iframe {
+      width: 560px;
+      height: 315px;
+    }
   </style>
 </head>
 <body>
@@ -35,33 +49,15 @@
 
   <h2 class="centered-text huge-font">Jiddu Krishnamurti</h2>
   <hr class="silver-separator">
-  
-  <h3 class="centered-text">Listening and Comprehension</h3>
 
-    <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jbwx0D6Of-M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <h3 class="centered-text underlined-heading">Listening and Comprehension</h3>
+
+  <div class="centered-video">
+    <iframe src="https://www.youtube.com/embed/jbwx0D6Of-M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
   <p></p>
 
-  <div class="hint">
-      <p>1. 
-ADVANCED LEVEL EXERCISE: If you were told to repeat the above quote without using the phrase "well adjusted to", which of the following options would you use to convey the intended meaning?
-.</p>
-      <input type="radio" name="answer" id="answer1a" value="alternately tweaked to">
-      <label for="answer1a">alternately tweaked to</label><br>
-      <input type="radio" name="answer" id="answer1b" value="a conformist in">
-      <label for="answer1b">a conformist in</label><br>
-      <input type="radio" name="answer" id="answer1c" value="underpaid by">
-      <label for="answer1c">underpaid by</label><br>
-      <input type="radio" name="answer" id="answer1d" value="a heretic in">
-      <label for="answer1da">heretic in</label><br>
-    </div>
-
-    <button onclick="checkAnswer()">Check</button>
-    <p id="feedback"></p>
-  </div>
-
-  <script src="script.js"></script>
+  <p>1. ADVANCED LEVEL EXERCISE: If you were told to repeat the above quote without using the phrase "well adjusted to", which of the following options would you use to convey the intended meaning?</p>
 </body>
 </html>

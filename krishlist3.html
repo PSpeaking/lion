@@ -35,7 +35,7 @@
     .centered-video {
       display: flex;
       justify-content: center;
-      border: 1px solid silver;
+      border: 2px solid silver;
       width: 560px;
       height: 315px;
       margin: 0 auto;
@@ -48,23 +48,25 @@
 
     .typewriter {
       overflow: hidden;
-      border-right: .15em solid silver;
       white-space: nowrap;
       margin: 0 auto;
       letter-spacing: .15em;
-      animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+    }
+
+    .typewriter::after {
+      content: '|';
+      display: inline-block;
+      animation: blink-caret .75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to { opacity: 0 }
+      50% { opacity: 1 }
     }
 
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: silver }
     }
   </style>
 </head>
@@ -84,7 +86,7 @@
   <p></p>
 
   <div class="hint">
-    <p><span class="underlined-heading">1. ADVANCED LEVEL EXERCISE:</span> If you were told to repeat the above quote without using the phrase "well adjusted to", which of the following options would you use to convey the intended meaning?</p>
+    <p><span class="underlined-heading">1. ADVANCED LEVEL EXERCISE:</span> <span class="typewriter">If you were told to repeat the above quote without using the phrase "well adjusted to", which of the following options would you use to convey the intended meaning?</span></p>
     <input type="radio" name="answer" id="answer1a" value="alternately tweaked to">
     <label for="answer1a">alternately tweaked to</label><br>
     <input type="radio" name="answer" id="answer1b" value="a conformist in">
@@ -95,12 +97,22 @@
     <label for="answer1da">heretic in</label><br>
   </div>
 
+  <script>
+    const typewriterText = document.querySelector('.typewriter');
+    const text = typewriterText.innerHTML;
+    typewriterText.innerHTML = '';
 
+    let i = 0;
+    const typeWriter = () => {
+      if (i < text.length) {
+        typewriterText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    };
 
-    <button onclick="checkAnswer()">Check</button>
-    <p id="feedback"></p>
-  </div>
-
-  <script src="script.js"></script>
+    typeWriter();
+  </script>
 </body>
 </html>
+

@@ -3,8 +3,8 @@ function checkAnswer() {
   var userAnswer = selectedAnswer ? selectedAnswer.value : '';
 
   if (userAnswer === 'a conformist in') {
-    document.getElementById('feedback').innerHTML = 'Yes, this would be the closest of the options available in conveying the intended meaning';
+    document.getElementById('feedback').innerHTML = 'Yes, this would be the closest of the options available in conveying the intended meaning.';
   } else {
-    document.getElementById('feedback').innerHTML = 'Nope! This answer is eith totally wrong or just not the best option.';
+    document.getElementById('feedback').innerHTML = 'Nope! This answer is either totally wrong or just not the best option.';
   }
 }

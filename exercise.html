@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Word Exercise</title>
+</head>
+<body>
+  <div class="exercise">
+    <h2>Exercise: Guess the Animal</h2>
+    <p>Guess the animal based on the given hint.</p>
+
+    <div class="hint">
+      <p>1. This animal is the king of the jungle.</p>
+      <input type="radio" name="answer" id="answer1a" value="lion">
+      <label for="answer1a">Lion</label><br>
+      <input type="radio" name="answer" id="answer1b" value="tiger">
+      <label for="answer1b">Tiger</label><br>
+      <input type="radio" name="answer" id="answer1c" value="elephant">
+      <label for="answer1c">Elephant</label><br>
+      <input type="radio" name="answer" id="answer1d" value="monkey">
+      <label for="answer1d">Monkey</label><br>
+    </div>
+
+    <button onclick="checkAnswer()">Check</button>
+    <p id="feedback"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

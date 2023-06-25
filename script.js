@@ -1,10 +1,28 @@
-function checkAnswer() {
-  var selectedAnswer = document.querySelector('input[name="answer"]:checked');
-  var userAnswer = selectedAnswer ? selectedAnswer.value : '';
-
-  if (userAnswer === 'a conformist in') {
-    document.getElementById('feedback').innerHTML = 'Yes, this would be the closest of the options available in conveying the intended meaning.';
-  } else {
-    document.getElementById('feedback').innerHTML = 'Nope! This answer is either totally wrong or just not the best option.';
-  }
-}
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the radio buttons
+    const radioButtons = document.querySelectorAll("input[type=radio]");
+  
+    // Add event listener to each radio button
+    radioButtons.forEach(function (radioButton) {
+      radioButton.addEventListener("change", function () {
+        // Get the selected answer
+        const selectedAnswer = document.querySelector(
+          'input[name="answer"]:checked'
+        );
+  
+        // Display feedback based on the selected answer
+        if (selectedAnswer) {
+          const feedback = document.getElementById("feedback");
+          if (selectedAnswer.value === "a heretic in") {
+            feedback.innerText = "Correct answer!";
+            feedback.style.color = "green";
+          } else {
+            feedback.innerText = "Incorrect answer!";
+            feedback.style.color = "red";
+          }
+        }
+      });
+    });
+  });
+  

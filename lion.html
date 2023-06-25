@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+  <div class="exercise">
+    <h3>Vocabulary Matching Exercise</h3>
+    <ol>
+      <li>
+        <strong>Übermensch</strong>: 
+        <label><input type="radio" name="q1" value="a"> a person who rises above societal constraints</label>
+        <label><input type="radio" name="q1" value="b"> a cycle of recurring events</label>
+        <label><input type="radio" name="q1" value="c"> a critique of Christianity</label>
+      </li>
+      <li>
+        <strong>Slave morality</strong>:
+        <label><input type="radio" name="q2" value="a"> a person who rises above societal constraints</label>
+        <label><input type="radio" name="q2" value="b"> a cycle of recurring events</label>
+        <label><input type="radio" name="q2" value="c"> a moral value system that weakens human nature</label>
+      </li>
+      <li>
+        <strong>Eternal recurrence</strong>:
+        <label><input type="radio" name="q3" value="a"> a person who rises above societal constraints</label>
+        <label><input type="radio" name="q3" value="b"> a cycle of recurring events</label>
+        <label><input type="radio" name="q3" value="c"> a critique of Christianity</label>
+      </li>
+    </ol>
+    <button onclick="checkAnswers()">Check Answers</button>
+    <p id="result"></p>
+  </div>
+
+  <div class="exercise">
+    <h3>Fill in the Blanks</h3>
+    <p>Nietzsche believed that traditional moral and religious values were __1__ human potential. He argued for the emergence of the __2__, a higher type of individual who would rise above societal constraints. Nietzsche's critique of Christianity centered around its promotion of __3__ morality, which he considered a weakening force. According to Nietzsche, life is an __4__ cycle, where everything that has happened will happen again.</p>
+    <form>
+      <ol>
+        <li><input type="text" id="q1"></li>
+        <li><input type="text" id="q2"></li>
+        <li><input type="text" id="q3"></li>
+        <li><input type="text" id="q4"></li>
+      </ol>
+      <button onclick="checkAnswers()">Check Answers</button>
+      <p id="result"></p>
+    </form>
+  </div>
+
+  <div class="exercise">
+    <h3>Sentence Rearrangement</h3>
+    <p>Arrange the words below to form a coherent sentence.</p>
+    <p><strong>Nietzsche / the / criticized / of / Christianity / morality / slave</strong></p>
+    <form>
+      <input type="text" id="sentence">
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="result"></p>
+    </form>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var exercise1Answers = ['a', 'c', 'b'];
+      var exercise2Answers = ['restricting', 'Übermensch', 'slave', 'eternal'];
+
+      var exercise1Score = 0;
+      var exercise2Score = 0;
+
+      var q1 = document.getElementsByName('q1');
+      for (var i = 0; i < q1.length; i++) {
+        if (q1[i].checked && q1[i].value === exercise1Answers[0]) {
+          exercise1Score++;
+        }
+      }
+
+      var q2 = document.getElementsByName('q2');
+      for (var i = 0; i < q2.length; i++) {
+        if (q2[i].checked && q2[i].value === exercise1Answers[1]) {
+          exercise1Score++;
+        }
+      }
+
+      var q3 = document.getElementsByName('q3');
+      for (var i = 0; i < q3.length; i++) {
+        if (q3[i].checked && q3[i].value === exercise1Answers[2]) {
+          exercise1Score++;
+        }
+      }
+
+      var q1Input = document.getElementById('q1').value.toLowerCase().trim();
+      if (q1Input === exercise2Answers[0]) {
+        exercise2Score++;
+      }
+
+      var q2Input = document.getElementById('q2').value.toLowerCase().trim();
+      if (q2Input === exercise2Answers[1]) {
+        exercise2Score++;
+      }
+
+      var q3Input = document.getElementById('q3').value.toLowerCase().trim();
+      if (q3Input === exercise2Answers[2]) {
+        exercise2Score++;
+      }
+
+      var q4Input = document.getElementById('q4').value.toLowerCase().trim();
+      if (q4Input === exercise2Answers[3]) {
+        exercise2Score++;
+      }
+
+      var totalScore = exercise1Score + exercise2Score;
+      var result = document.getElementById('result');
+      result.innerHTML = 'Exercise 1 Score: ' + exercise1Score + '/3<br>Exercise 2 Score: ' + exercise2Score + '/4<br>Total Score: ' + totalScore + '/7';
+    }
+
+    function checkAnswer() {
+      var sentenceInput = document.getElementById('sentence').value.toLowerCase().trim();
+      var expectedAnswer = 'Nietzsche criticized the slave morality of Christianity.';
+      var result = document.getElementById('result');
+      if (sentenceInput === expectedAnswer) {
+        result.innerHTML = 'Correct!';
+      } else {
+        result.innerHTML = 'Incorrect. Try again.';
+      }
+    }
+  </script>
+</body>
+</html>

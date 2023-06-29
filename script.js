@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const feedback = document.getElementById("feedback");
           if (selectedAnswer.value === "a conformist in") {
             feedback.innerText = "Correct answer!";
-            feedback.style.color = "white";
+            feedback.style.color = "gold";
           } else {
             feedback.innerText = "Incorrect answer!";
             feedback.style.color = "white";

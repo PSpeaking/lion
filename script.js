@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             feedback.style.color = "white";
           } else {
             feedback.innerText = "Incorrect answer!";
-            feedback.style.color = "red";
+            feedback.style.color = "white";
           }
         }
       });

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display feedback based on the selected answer
         if (selectedAnswer) {
           const feedback = document.getElementById("feedback");
-          if (selectedAnswer.value === "a heretic in") {
+          if (selectedAnswer.value === "a conformist in") {
             feedback.innerText = "Correct answer!";
             feedback.style.color = "green";
           } else {

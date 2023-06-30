@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Philosophically Speaking</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .huge-font {
+      font-size: 36px;
+      font-family: Arial, sans-serif;
+    }
+
+    .gold-text {
+      color: gold;
+    }
+
+    .silver-separator {
+      border: none;
+      border-top: 1px solid silver;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+      border: 4px solid silver;
+      width: 560px;
+      height: 315px;
+      margin: 0 auto;
+    }
+
+    .centered-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .exercise-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 560px;
+      margin: 0 auto;
+    }
+
+    .hint {
+      text-align: left;
+      margin-top: 10px;
+      font-family: Verdana, sans-serif;
+    }
+
+    .radio-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      margin-top: 10px;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center;
+      background-color: gold;
+      padding: 5px;
+      color: black;
+    }
+
+    .feedback-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .check-button {
+      margin-bottom: 10px;
+    }
+    
+    .word-inputs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .word-inputs label {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="centered-text huge-font gold-text"><strong><em>Philosophically Speaking</em></strong></h1>
+  <hr class="silver-separator">
+
+  <h2 class="centered-text huge-font">Jiddu Krishnamurti</h2>
+  <hr class="silver-separator">
+
+  <h3 class="centered-text underlined-heading">Listening and Comprehension</h3>
+
+  <div class="centered-video">
+    <iframe src="https://www.youtube.com/embed/lSk2ukt8PC0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <div class="exercise-container">
+    <div class="hint">
+      <p>Listen to the video and correctly guess and spell the following words from the quote:</p>
+    </div>
+
+    <div class="word-inputs">
+      <label for="measure">4th word:</label>
+      <input type="text" id="measure" name="measure" placeholder="Enter word">
+
+      <label for="health">6th word:</label>
+      <input type="text" id="health" name="health" placeholder="Enter word">
+
+      <label for="profoundly">13th word:</label>
+      <input type="text" id="profoundly" name="profoundly" placeholder="Enter word">
+    </div>
+
+    <div class="feedback-container">
+      <button class="check-button" onclick="checkSpelling()">Check</button>
+      <p id="spelling-feedback"></p>
+    </div>
+  </div>
+
+  <hr class="silver-separator">
+
+  <div class="exercise-container">
+    <div class="hint">
+      <p><span class="underlined-heading gold-text">COMPREHENSION:</span></p> 
+      <p>If you were told to repeat the above quote without using the phrase "well adjusted to", which of the following options should you use to convey the intended meaning?</p>
+    </div>
+
+    <div class="feedback-container">
+      <p id="feedback"></p>
+    </div>
+
+    <div class="radio-container">
+      <div class="radio-item">
+        <input type="radio" name="answer" id="answer1a" value="alternately tweaked to">
+        <label for="answer1a">alternately tweaked to</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="answer" id="answer1b" value="a conformist in">
+        <label for="answer1b">a conformist in</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="answer" id="answer1c" value="underpaid by">
+        <label for="answer1c">underpaid by</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="answer" id="answer1d" value="a heretic in">
+        <label for="answer1d">a heretic in</label>
+      </div>
+    </div>
+
+    <div class="feedback-container">
+      <button class="check-button" onclick="checkAnswer()">Check</button>
+      <p id="comprehension-feedback"></p>
+    </div>
+  </div>
+
+  <hr class="silver-separator">
+
+  <script>
+    function checkSpelling() {
+      var measureInput = document.getElementById("measure").value.trim().toLowerCase();
+      var healthInput = document.getElementById("health").value.trim().toLowerCase();
+      var profoundlyInput = document.getElementById("profoundly").value.trim().toLowerCase();
+
+      var measureCorrect = measureInput === "measure";
+      var healthCorrect = healthInput === "health";
+      var profoundlyCorrect = profoundlyInput === "profoundly";
+
+      if (measureCorrect && healthCorrect && profoundlyCorrect) {
+        document.getElementById("spelling-feedback").textContent = "Congratulations! Your listening and spelling of all three words are correct.";
+      } else {
+        var incorrectWords = [];
+        if (!measureCorrect) {
+          incorrectWords.push("4th word");
+        }
+        if (!healthCorrect) {
+          incorrectWords.push("6th word");
+        }
+        if (!profoundlyCorrect) {
+          incorrectWords.push("13th word");
+        }
+        document.getElementById("spelling-feedback").textContent = "Please check the spelling of the following words: " + incorrectWords.join(", ");
+      }
+    }
+
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+      if (selectedAnswer) {
+        var answer = selectedAnswer.value;
+        if (answer === "a conformist in") {
+          document.getElementById("comprehension-feedback").textContent = "Congratulations! Your comprehension answer is correct.";
+        } else {
+          document.getElementById("comprehension-feedback").textContent = "Incorrect answer. Please try again.";
+        }
+      } else {
+        document.getElementById("comprehension-feedback").textContent = "Please select an answer.";
+      }
+    }
+  </script>
+</body>
+</html>

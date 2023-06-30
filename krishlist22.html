@@ -129,7 +129,29 @@
       </div>
     </div>
   </div>
+  
+ <div class="exercise-container">
+    <div class="hint">
+      <p><span class="underlined-heading">1. LISTENING AND SPELLING EXERCISE:</span></p>
+      <p>Listen to the video and correctly guess and spell the following words from the quote:</p>
+    </div>
 
+    <div class="word-inputs">
+      <label for="measure">4th word: </label>
+      <input type="text" id="measure" name="measure" placeholder="Enter word">
+
+      <label for="health">6th word: </label>
+      <input type="text" id="health" name="health" placeholder="Enter word">
+
+      <label for="profoundly">13th word: </label>
+      <input type="text" id="profoundly" name="profoundly" placeholder="Enter word">
+    </div>
+
+    <div class="feedback-container">
+      <button class="check-button" onclick="checkSpelling()">Check</button>
+      <p id="spelling-feedback"></p>
+    </div>
+  </div>
   <script>
     function checkSpelling() {
       var measureInput = document.getElementById("measure").value.trim().toLowerCase();

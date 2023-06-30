@@ -129,7 +129,36 @@
       </div>
     </div>
   </div>
-  
+
+  <script>
+    function checkSpelling() {
+      var measureInput = document.getElementById("measure").value.trim().toLowerCase();
+      var healthInput = document.getElementById("health").value.trim().toLowerCase();
+      var profoundlyInput = document.getElementById("profoundly").value.trim().toLowerCase();
+
+      var measureCorrect = measureInput === "measure";
+      var healthCorrect = healthInput === "health";
+      var profoundlyCorrect = profoundlyInput === "profoundly";
+
+      if (measureCorrect && healthCorrect && profoundlyCorrect) {
+        document.getElementById("spelling-feedback").textContent = "Congratulations! Your listening and spelling of all three words are correct.";
+      } else {
+        var incorrectWords = [];
+        if (!measureCorrect) {
+          incorrectWords.push("4th word");
+        }
+        if (!healthCorrect) {
+          incorrectWords.push("6th word");
+        }
+        if (!profoundlyCorrect) {
+          incorrectWords.push("13th word");
+        }
+        document.getElementById("spelling-feedback").textContent = "Please check the spelling of the following words: " + incorrectWords.join(", ");
+      }
+    }
+  </script>
+
+          
   <script src="script.js"></script>
 </body>
 </html>

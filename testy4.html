@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Missing Word Exercise</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .huge-font {
+      font-size: 36px;
+      font-family: Arial, sans-serif;
+    }
+
+    .gold-text {
+      color: gold;
+    }
+
+    .silver-separator {
+      border: none;
+      border-top: 1px solid silver;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+      border: 4px solid silver;
+      width: 560px;
+      height: 315px;
+      margin: 0 auto;
+    }
+
+    .centered-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .exercise-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sentence {
+      margin-bottom: 10px;
+    }
+    .blank {
+      font-weight: bold;
+      color: blue;
+    }
+
+    /* New class for the text with 1.5 spacing and Verdana font */
+    .text {
+      font-family: Verdana, sans-serif;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<h1 class="centered-text huge-font gold-text"><strong><em>Out and About</em></strong></h1>
+  <hr class="silver-separator">
+
+  <h2 class="centered-text huge-font">My Camping Gear</h2>
+  <hr class="silver-separator">
+
+  <div class="centered-video">
+    <iframe src="https://www.youtube.com/embed/Y8Eh5IwsXv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  
+  <div class="exercise-container">
+    <!-- Apply the 'text' class to the text div -->
+    <div class="text">
+      <p>This is a small <input type="text" id="input-1" size="10" /> person tent from a well-known outdoor equipment supplier. It's cheap and does the job. I think it's in the region of £25 or £30. If you're a tall person, it's really only a one-person tent, in my opinion, and only to sleep <input type="text" id="input-2" size="10" /> - but I think it's an excellent option for an uncomplicated night in a tent. It's small enough so that your body heat doesn't <input type="text" id="input-3" size="10" /> too quickly in a surplus of air space, and its double skin does away with problems of <input type="text" id="input-4" size="10" />.</p>
+      <p>The next vital piece of equipment is a ground <input type="text" id="input-5" size="10" />. One that acts as a good barrier to the cold, cold ground. I use again, a very cheap option, around £12 or £15, and at only an inch thick I've been surprised that, with a good sleeping bag, it hasn't let me <input type="text" id="input-6" size="10" /> yet.</p>
+      <p>And so we come to the next item, my <input type="text" id="input-7" size="10" /> bag. It's my most expensive piece of my camping kit, around £70 I think. It keeps me warm to temperatures approaching zero. It's even got a hood to make it extra <input type="text" id="input-8" size="10" />. You wouldn't want it on a hot Spanish night. Change to a lightweight, if not sleep eau natural. In any event, if you don't have the right sleeping bag for the weather, you <input type="text" id="input-9" size="10" /> gonna sleep. No fun.</p>
+      <p>The type of pillow that you use, or make, may be more of a personal preference. Personally, I like to use a small inflatable, and put one or two coarse towels on top for extra support and stability, so I wake up with my head in the same <input type="text" id="input-10" size="10" /> as it was when I fell asleep, and no complaints from my neck.</p>
+      <p>Now I'm all set to conk out for the night or just drift off to sleep listening to <span class="blank" id="blank-11"></span>, or the gentle tap of rain, or even a good thunderstorm. It's all good when you're snug as a bug in a <span class="blank" id="blank-12"></span>.</p>
+    </div>
+    <div class="options">
+      <p>Guess the missing words by entering the corresponding numbers:</p>
+      <ol>
+          disappear, one, comfy, not, in, sleeping, condensation, mat, down, place. 
+      </ol>
+    </div>
+    <button onclick="checkAnswers()">Check Answers</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var answers = {
+        "1": "one",
+        "2": "in",
+        "3": "disappear",
+        "4": "condensation",
+        "5": "mat",
+        "6": "down",
+        "7": "sleeping",
+        "8": "comfy",
+        "9": "not",
+        "10": "place"
+      };
+
+      var result = document.getElementById('result');
+      var allCorrect = true;
+
+      for (var i = 1; i <= 10; i++) {
+        var userAnswer = document.getElementById('input-' + i).value.toLowerCase().trim();
+        var inputField = document.getElementById('input-' + i);
+
+        if (userAnswer !== answers[i]) {
+          allCorrect = false;
+          inputField.style.color = 'red';
+        } else {
+          inputField.style.color = 'black';
+        }
+      }
+
+      if (allCorrect) {
+        result.innerHTML = 'Congratulations! All answers are correct!';
+      } else {
+        result.innerHTML = 'Please check your answers and try again.';
+      }
+    }
+  </script>
+</body>
+</html>

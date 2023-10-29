@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>"Cloze Exercise" or "Fill-in-the-Blanks Exercise."</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .huge-font {
+      font-size: 36px;
+      font-family: Arial, sans-serif;
+    }
+
+    .gold-text {
+      color: gold;
+    }
+
+    .silver-separator {
+      border: none;
+      border-top: 1px solid silver;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+      border: 4px solid silver;
+      width: 560px;
+      height: 315px;
+      margin: 0 auto;
+    }
+
+    .centered-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .exercise-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sentence {
+      margin-bottom: 10px;
+    }
+    .blank {
+      font-weight: bold;
+      color: blue;
+    }
+
+    /* New class for the text with 1.5 spacing and Verdana font */
+   
+
+    .text {
+      font-family: Verdana, sans-serif;
+      line-height: 1.5;
+      margin: 0 auto; /* Added to center the text */
+      max-width: 600px; /* Added to limit the width of the text */
+    }
+
+    .lighter-green-italics {
+      color: lightgreen;
+      font-style: italic;
+    }
+
+    .gold-paragraph {
+      color: gold;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1 class="centered-text huge-font gold-text"><strong><em>Philosophically Speaking</em></strong></h1>
+<hr class="silver-separator">
+
+<h2 class="centered-text huge-font underlined-heading">Anaximander of Miletus</h2>
+<hr class="silver-separator">
+
+<div class="centered-video">
+  <iframe src="https://www.youtube.com/embed/Y8Eh5IwsXv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<hr class="silver-separator">
+
+<div class="exercise-container">
+  <!-- Apply the 'text' class to the text div -->
+  <div class="text">
+    <p class="underlined-heading"><strong><em>Cloze Exercise. Fill-in-the-Blanks.</em></strong></p>
+    <p class="lighter-green-italics">Anaximander was an Ancient Greek Philosopher. Read the following list of words. Use a dictiionary to help with any new words. Read the main text below the list and type the correct word from the list in each blank space. Use each word from the list only once. All answers need to be correct. Check your answers by pressing the Check button below the main text.</p>
+    
+    <p class="gold-paragraph">Indeterminate, Opposites, Boundless, Apeiron, Infinite, Movements,  Balance, Philosophy, Evolution, Cosmic, Ultimate, Evolution, Philosophy, Cycle, </p>
+
+    
+   <p>Anaximander, an ancient Greek philosopher, introduced the concept of the as a fundamental principle of the universe. The Apeiron is an abstract and <input type="text" id="input-3" size="10" /> substance that, according to Anaximander, serves as the ultimate source of all things. It is often described as <input type="text" id="input-1" size="10" /> or "the indefinite."</p> 
+      <p>The Apeiron stands in contrast to earlier ideas proposed by philosophers like Thales, who believed that water was the <input type="text" id="input-4" size="10" /> substance. Anaximander's Apeiron, in contrast, is not a specific element like water, but rather an <input type="text" id="input-5" size="10" />  and limitless source from which everything in the cosmos originates and to which everything eventually returns.</p>
+       <p>One of the intriguing aspects of Anaximander's philosophy is his idea that the Apeiron governs the <input type="text" id="input-6" size="10" /> of celestial bodies. He believed that this boundless and eternal principle controls the movements of the stars, planets, and even the sun, maintaining <input type="text" id="input-7" size="10" />  and order in the cosmos.</p> 
+        <p>Anaximander's Apeiron is also associated with the cyclical nature of the universe. He proposed that opposites, such as hot and cold or wet and dry, emerge from the Apeiron and then return to it in an ongoing <input type="text" id="input-8" size="10" /> . This cyclical process is essential to his understanding of the cosmos and the way <input type="text" id="input-9" size="10" />  interact with each other.</p>
+        <p>In addition to his contributions to <input type="text" id="input-10" size="10" /> , Anaximander's philosophy contained early ideas related to <input type="text" id="input-1" size="11" /> . He suggested that life forms have evolved from simpler forms over time, anticipating later theories of <input type="text" id="input-1" size="12" /> .</p>
+        <p>Anaximander's Apeiron remains a significant concept in the history of <input type="text" id="input-13" size="10" />  and philosophy. It challenged conventional beliefs of his time, paving the way for future thinkers to explore the fundamental principles that govern the universe and our place within it.</p>
+    </div>
+
+  <hr class="silver-separator">
+
+  <button onclick="checkAnswers()">Check Answers</button>
+  <div id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+      var answers = {
+        "1": "Apeiron",
+        "2": "Indeterminate",
+        "3": "Boundless",
+        "4": "Ultimate",
+        "5": "Infinte",
+        "6": "Movements",
+        "7": "Balance",
+        "8": "Cycle",
+        "9": "Opposites",
+        "10": "Philosophy"
+        "11": "Evolution"
+        "12": "Cosmic evolution"
+        "13": "Philosophy"
+      };
+
+      var result = document.getElementById('result');
+      var allCorrect = true;
+
+      for (var i = 1; i <= 10; i++) {
+        var userAnswer = document.getElementById('input-' + i).value.toLowerCase().trim();
+        var inputField = document.getElementById('input-' + i);
+
+        if (userAnswer !== answers[i]) {
+          allCorrect = false;
+          inputField.style.color = 'red';
+        } else {
+          inputField.style.color = 'black';
+        }
+      }
+
+      if (allCorrect) {
+        result.innerHTML = 'Congratulations! All answers are correct!';
+      } else {
+        result.innerHTML = 'Please check your answers and try again.';
+      }
+    }
+  </script>
+  </div>
+    <hr class="silver-separator">
+  </div>
+</body>
+</html>

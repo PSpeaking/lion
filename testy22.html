@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>"Cloze Exercise" or "Fill-in-the-Blanks Exercise."</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .huge-font {
+      font-size: 36px;
+      font-family: Arial, sans-serif;
+    }
+
+    .gold-text {
+      color: gold;
+    }
+
+    .silver-separator {
+      border: none;
+      border-top: 1px solid silver;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+      border: 4px solid silver;
+      width: 560px;
+      height: 315px;
+      margin: 0 auto;
+    }
+
+    .centered-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .exercise-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sentence {
+      margin-bottom: 10px;
+    }
+    .blank {
+      font-weight: bold;
+      color: blue;
+    }
+
+    /* New class for the text with 1.5 spacing and Verdana font */
+   
+
+    .text {
+      font-family: Verdana, sans-serif;
+      line-height: 1.5;
+      margin: 0 auto; /* Added to center the text */
+      max-width: 600px; /* Added to limit the width of the text */
+    }
+
+    .lighter-green-italics {
+      color: lightgreen;
+      font-style: italic;
+    }
+
+    .gold-paragraph {
+      color: gold;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1 class="centered-text huge-font gold-text"><strong><em>Out and About</em></strong></h1>
+<hr class="silver-separator">
+
+<h2 class="centered-text huge-font underlined-heading">My Camping Gear</h2>
+<hr class="silver-separator">
+
+<div class="centered-video">
+  <iframe src="https://www.youtube.com/embed/Y8Eh5IwsXv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<hr class="silver-separator">
+
+<div class="exercise-container">
+  <!-- Apply the 'text' class to the text div -->
+  <div class="text">
+    <p class="underlined-heading"><strong><em>Fill-in-the-Blanks.</em></strong></p>
+    <p class="lighter-green-italics">Do you like Camping? Watch the brief clip above, then read the following list of words. Use a dictiionary to help with any new words. Read the main text below the list and type the correct word from the list in each blank space. Use each word from the list only once. All answers need to be correct. Check your answers by pressing the Check button below the main text.</p>
+    
+    <p class="gold-paragraph">healing, heal, introspection, self-acceptance, bring, develop, embrace, strength
+        embody, spirit animals,</p>
+
+    <p>The adoption of <input type="text" id="input-1" size="10" />in personal symbolism is a more individualized and eclectic approach to the concept of spirit animals. In this context, people may choose or identify with specific animals to represent qualities, traits, or characteristics they wish to <input type="text" id="input-2" size="10" /> This practice is not tied to any specific cultural or spiritual tradition but is rooted in personal belief and symbolism. Here's an assessment of how the use of spirit animals in personal symbolism can lead to an enhanced understanding of the self, including its potential benefits in healing, psychology, and personal growth: </p>
+    
+    <p class="underlined-heading"><strong><em>Self-Reflection and Awareness:</em></strong></p> Choosing a spirit animal based on personal affinity or resonance often involves <input type="text" id="input-3" size="10" />and self-reflection. This process encourages individuals to consider which qualities or characteristics they value or want to <input type="text" id="input-4" size="10" /> It promotes self-awareness and a deeper understanding of one's values and aspirations.
+    
+    <p class="underlined-heading"><strong><em>Symbolic Representation:</em></strong></p> Spirit animals serve as symbols that can represent different facets of the self. By choosing or identifying with a particular animal, individuals can explore and <input type="text" id="input-5" size="10" /> various aspects of their personalities, desires, and life goals. This symbolic representation can provide a framework for personal growth and <input type="text" id="input-6" size="10" />.
+    
+    <p class="underlined-heading"><strong><em>Psychological Integration:</em></strong></p>Psychological Integration: In psychology, the concept of the "shadow self" or unconscious aspects of the personality is explored. Spirit animals can be seen as a tool for integrating and understanding these hidden or less-acknowledged parts of the self. By identifying with a spirit animal that symbolizes these hidden qualities, individuals may find it easier to <input type="text" id="input-7" size="10" />them into conscious awareness.
+    
+    <p class="underlined-heading"><strong><em>Healing and Coping:</em></strong></p>For some, the adoption of spirit animals can be a source of <input type="text" id="input-8" size="10" />and coping. The chosen animal may represent qualities that help individuals navigate challenges, <input type="text" id="input-9" size="10" /> from past experiences, or cope with emotional or psychological issues. The symbolic connection to the spirit animal can offer comfort and <input type="text" id="input-10" size="10" /> during difficult times.
+  
+   </div>
+
+  <hr class="silver-separator">
+
+  <button onclick="checkAnswers()">Check Answers</button>
+  <div id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+      var answers = {
+        "1": "spirit animals",
+        "2": "embody",
+        "3": "introspection",
+        "4": "develop",
+        "5": "embrace",
+        "6": "self-accesptance",
+        "7": "bring",
+        "8": "healing",
+        "9": "heal",
+        "10": "strength"
+      };
+
+      var result = document.getElementById('result');
+      var allCorrect = true;
+
+      for (var i = 1; i <= 10; i++) {
+        var userAnswer = document.getElementById('input-' + i).value.toLowerCase().trim();
+        var inputField = document.getElementById('input-' + i);
+
+        if (userAnswer !== answers[i]) {
+          allCorrect = false;
+          inputField.style.color = 'red';
+        } else {
+          inputField.style.color = 'black';
+        }
+      }
+
+      if (allCorrect) {
+        result.innerHTML = 'Congratulations! All answers are correct!';
+      } else {
+        result.innerHTML = 'Please check your answers and try again.';
+      }
+    }
+  </script>
+  </div>
+    <hr class="silver-separator">
+  </div>
+</body>
+</html>

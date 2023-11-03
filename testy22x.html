@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>"Cloze Exercise" or "Fill-in-the-Blanks Exercise."</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .huge-font {
+      font-size: 36px;
+      font-family: Arial, sans-serif;
+    }
+
+    .gold-text {
+      color: gold;
+    }
+
+    .silver-separator {
+      border: none;
+      border-top: 1px solid silver;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .underlined-heading {
+      text-decoration: underline;
+    }
+
+    .centered-video {
+      display: flex;
+      justify-content: center;
+      border: 4px solid silver;
+      width: 560px;
+      height: 315px;
+      margin: 0 auto;
+    }
+
+    .centered-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .exercise-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sentence {
+      margin-bottom: 10px;
+    }
+    .blank {
+      font-weight: bold;
+      color: blue;
+    }
+
+    /* New class for the text with 1.5 spacing and Verdana font */
+   
+
+    .text {
+      font-family: Verdana, sans-serif;
+      line-height: 1.5;
+      margin: 0 auto; /* Added to center the text */
+      max-width: 600px; /* Added to limit the width of the text */
+    }
+
+    .lighter-green-italics {
+      color: lightgreen;
+      font-style: italic;
+    }
+
+    .gold-paragraph {
+      color: gold;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1 class="centered-text huge-font gold-text"><strong><em>Philosophically Speaking</em></strong></h1>
+<hr class="silver-separator">
+
+<h2 class="centered-text huge-font underlined-heading">Spirit Animals:</h2>
+<h2 class="centered-text huge-font underlined-heading">Symbolism and The Self</h2>
+<hr class="silver-separator">
+
+<div class="centered-video">
+  <iframe src="https://www.youtube.com/embed/kUx2hfPlrdI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<hr class="silver-separator">
+
+
+<div class="exercise-container">
+    <p class="gold-paragraph">healing, heal, introspection, self-acceptance, bring, develop, embrace, strength
+        embody, spirit animals,</p>
+  <!-- Apply the 'text' class to the text div -->
+  <div class="text">
+    <p class="lighter-green-italics">Read the words in gold above then play the video/audio and see if you can identify them in the narrative</p>
+    <p class="lighter-green-italics">After you've listened to the narrative, read the text below and fill in the blank spaces with the correct words.</p>
+    
+    
+    <p class="underlined-heading"><strong><em>Introduction:</em></strong></p>Nirvana, particularly in the context of Buddhism, is a profound and complex concept that is intricately linked to the notion of the self, or lack thereof. The understanding of self, or "Anatta" in Pali (Anatman in Sanskrit), plays a central role in the Buddhist perspective on Nirvana />.
+    
+    <p class="underlined-heading"><strong><em>Heading2:</em></strong></p> In Buddhism, the self is seen as an <input type="text" id="input-1" size="10" />, a mistaken concept that leads to <input type="text" id="input-2" size="10" /> and bondage. The core teachings of Buddhism revolve around the idea that all phenomena, including the self, are impermanent and devoid of any inherent, unchanging essence. This view is encapsulated in the doctrine of "Anatta," which asserts that there is no permanent, unchanging self or soul within individuals. Instead, the self is considered to be a <input type="text" id="input-3" size="10" /> of ever-changing and <input type="text" id="input-4" size="10" /> elements, such as the physical body, feelings, perceptions, mental formations, and consciousness.
+
+    <p class="underlined-heading"><strong><em>Heading3:</em></strong></p>Nirvana, in this context, represents the realization of the true nature of the self, or more accurately, the realization of the absence of an enduring self. Attaining Nirvana involves a profound shift in one's perception and understanding, where the illusion of a separate and enduring self is <input type="text" id="input-5" size="10" />. When this realization occurs, it leads to the cessation of suffering and the end of the cycle of birth, death, and rebirth (Samsara).
+    
+    <p class="underlined-heading"><strong><em>Heading4:</em></strong></p>Nirvana is often described as the state where the illusion of self is completely extinguished. It is the realization that the self is not a fixed and independent entity but is, in fact, an ever-changing, interconnected part of the web of existence. This realization brings a deep and lasting <input type="text" id="input-6" size="10" />, as it frees individuals from the attachments and desires that perpetuate suffering and rebirth., during difficult times.
+  
+    <p class="underlined-heading"><strong><em>Heading5:</em></strong></p>So, in the context of Nirvana, the notion of the self is intimately tied to the process of self-transcendence. The ultimate <input type="text" id="input-7" size="10" /> is not the glorification or eternal preservation of the self but its dissolution, leading to a state of profound liberation and <input type="text" id="input-8" size="10" />. The recognition of the absence of a permanent self is a fundamental step toward reaching the state of Nirvana in Buddhist philosophy.
+
+   </div>
+
+  <hr class="silver-separator">
+
+  <button onclick="checkAnswers()">Check Answers</button>
+  <div id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+      var answers = {
+        "1": "illusion",
+        "2": "sufferung",
+        "3": "collection",
+        "4": "interdependent",
+        "5": "transcended",
+        "6": "peace",
+        "7": "goal",
+        "8": "enlightenment"
+      };
+
+      var result = document.getElementById('result');
+      var allCorrect = true;
+
+      for (var i = 1; i <= 10; i++) {
+        var userAnswer = document.getElementById('input-' + i).value.toLowerCase().trim();
+        var inputField = document.getElementById('input-' + i);
+
+        if (userAnswer !== answers[i]) {
+          allCorrect = false;
+          inputField.style.color = 'red';
+        } else {
+          inputField.style.color = 'black';
+        }
+      }
+
+      if (allCorrect) {
+        result.innerHTML = 'Congratulations! All answers are correct!';
+      } else {
+        result.innerHTML = 'Please check your answers and try again.';
+      }
+    }
+  </script>
+  </div>
+    <hr class="silver-separator">
+  </div>
+</body>
+</html>
